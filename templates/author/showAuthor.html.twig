@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Details of {{ author.userName }}</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2196F3;
+ 
+        }
+
+        table {
+            width: 50%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 2px solid #ddd;
+        }
+
+        th {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        img {
+            border-radius: 8px;
+        }
+ 
+
+    </style>
+</head>
+<body>
+
+    <h1>Details of {{ author.userName }}</h1>
+
+    <table>
+        <tr>
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number of Books</th>
+        </tr>
+        <tr>
+            <td><img src="{{ asset(author.image) }}" width="100" height="100"></td>
+            <td>{{ author.userName | upper }}</td>
+            <td>{{ author.email }}</td>
+            <td>{{ author.nbBooks }}</td>
+        </tr>
+    </table>
+
+</body>
+</html>
